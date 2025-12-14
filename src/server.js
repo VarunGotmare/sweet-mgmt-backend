@@ -10,7 +10,10 @@ const app = express();
 
 app.use(cors(
   {
-    origin: ['*'],
+    origin: [
+      "http://localhost:4000", //frontend local
+      "sweet-mgmt-frontend-production.up.railway.app",   //frontend production
+    ],
     credentials: true,
   }
 ));
