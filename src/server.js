@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const {prisma} = require('./lib/prisma');
+const { prisma } = require('./lib/prisma');
 
 const authRoutes = require('./routes/auth.routes');
 const sweetsRoutes = require('./routes/sweets.routes');
@@ -14,6 +14,8 @@ app.use(cors(
       "http://localhost:4000", //frontend local
       "sweet-mgmt-frontend-production.up.railway.app",   //frontend production
     ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   }
 ));
